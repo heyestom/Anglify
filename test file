@@ -1,0 +1,19 @@
+<html>
+<head>
+  <script src="jquery-2.1.0.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+console.log( "color");
+</script>
+<div>
+test file accessorize 
+Gasoline  gasoline GASOLINE GASOLINe G
+<p id="bad_words">Accessorize gasoline vulgarization bob</p>
+<p>accessorize vulgarization bob</p>
+<p>accessorize vulgarization bob</p>
+<p>accessorize vulgarization bob</p>
+</div>
+</body>
+</html>
