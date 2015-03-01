@@ -9,6 +9,8 @@ dict["acclimatized"] = "acclimatised";
 dict["acclimatizes"] = "acclimatises";
 dict["acclimatizing"] = "acclimatising";
 dict["accouterments"] = "accoutrements";
+dict["advertize"] = ["advertise"];
+dict["advertizing"] = ["advertising"];
 dict["eon"] = "aeon";
 dict["eons"] = "aeons";
 dict["aerogram"] = "aerogramme";
@@ -51,10 +53,10 @@ dict["anesthetizes"] = "anaesthetises";
 dict["anesthetizing"] = "anaesthetising";
 dict["anesthetist"] = "anaesthetist";
 dict["anesthetists"] = "anaesthetists";
-dict["anesthetize"] = "anaesthetize";
-dict["anesthetized"] = "anaesthetized";
-dict["anesthetizes"] = "anaesthetizes";
-dict["anesthetizing"] = "anaesthetizing";
+dict["anesthetize"] = "anaesthetise";
+dict["anesthetized"] = "anaesthetised";
+dict["anesthetizes"] = "anaesthetises";
+dict["anesthetizing"] = "anaesthetising";
 dict["analog"] = "analogue";
 dict["analogs"] = "analogues";
 dict["analyze"] = "analyse";
@@ -280,10 +282,10 @@ dict["coloreds"] = "coloureds";
 dict["colorful"] = "colourful";
 dict["colorfully"] = "colourfully";
 dict["coloring"] = "colouring";
-dict["colorize"] = "colourize";
-dict["colorized"] = "colourized";
-dict["colorizes"] = "colourizes";
-dict["colorizing"] = "colourizing";
+dict["colorize"] = "colourise";
+dict["colorized"] = "colourised";
+dict["colorizes"] = "colourises";
+dict["colorizing"] = "colourising";
 dict["colorless"] = "colourless";
 dict["colors"] = "colours";
 dict["commercialize"] = "commercialise";
@@ -302,8 +304,6 @@ dict["conceptualize"] = "conceptualise";
 dict["conceptualized"] = "conceptualised";
 dict["conceptualizes"] = "conceptualises";
 dict["conceptualizing"] = "conceptualising";
-dict["connection"] = "connexion";
-dict["connections"] = "connexions";
 dict["contextualize"] = "contextualise";
 dict["contextualized"] = "contextualised";
 dict["contextualizes"] = "contextualises";
@@ -791,10 +791,6 @@ dict["inflection"] = "inflexion";
 dict["inflections"] = "inflexions";
 dict["initialed"] = "initialled";
 dict["initialing"] = "initialling";
-dict["install"] = "instal";
-dict["installment"] = "instalment";
-dict["installments"] = "instalments";
-dict["installs"] = "instals";
 dict["instill"] = "instil";
 dict["instills"] = "instils";
 dict["institutionalization"] = "institutionalisation";
@@ -1492,8 +1488,6 @@ dict["stigmatize"] = "stigmatise";
 dict["stigmatized"] = "stigmatised";
 dict["stigmatizes"] = "stigmatises";
 dict["stigmatizing"] = "stigmatising";
-//dict["story"] = "storey";
-//dict["stories"] = "storeys";
 dict["subsidization"] = "subsidisation";
 dict["subsidize"] = "subsidise";
 dict["subsidized"] = "subsidised";
@@ -1586,12 +1580,12 @@ dict["tranquilizers"] = "tranquillisers";
 dict["tranquilizes"] = "tranquillises";
 dict["tranquilizing"] = "tranquillising";
 dict["tranquility"] = "tranquillity";
-dict["tranquilize"] = "tranquillize";
-dict["tranquilized"] = "tranquillized";
-dict["tranquilizer"] = "tranquillizer";
-dict["tranquilizers"] = "tranquillizers";
-dict["tranquilizes"] = "tranquillizes";
-dict["tranquilizing"] = "tranquillizing";
+dict["tranquilize"] = "tranquillise";
+dict["tranquilized"] = "tranquillised";
+dict["tranquilizer"] = "tranquilliser";
+dict["tranquilizers"] = "tranquillisers";
+dict["tranquilizes"] = "tranquillises";
+dict["tranquilizing"] = "tranquillising";
 dict["tranquility"] = "tranquilly";
 dict["transistorized"] = "transistorised";
 dict["traumatize"] = "traumatise";
@@ -1725,7 +1719,8 @@ dict["cab"] = "taxi";
 dict["candy"] = "sweet";
 dict["elevator"] = "lift";
 dict["closet"] = "wardrobe";
-dict["fall"] = "autumn";
+// too many false positives
+// dict["fall"] = "autumn";
 dict["diaper"] = "nappy";
 dict["eraser"] = "rubber";
 dict["faucet"] = "tap";
@@ -1761,6 +1756,7 @@ dict["mailman"] = "postman";
 dict["trash"] = "rubbish";
 dict["lawyer"] = "solictor";
 dict["billfold"] = "wallet";
+dict["yall"] = "you all";
 
 function capitaliseFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -1771,8 +1767,11 @@ function translate(words, element) {
     var better_words = "";
 
     for (var i = 0; i < words.length; i++) {
+
         var sanatised_word = words[i].replace(/\W/g, '')
-        //console.log(sanatised_word, dict[sanatised_word.toLowerCase()]);
+
+       	console.log(sanatised_word);
+				console.log(words[i]);
 
         var caps_start = false;
         var all_caps = false;
@@ -1806,8 +1805,8 @@ function parse_through_elements(all) {
     for (var i = 0; i < all.length; i++) {
         var original_words = all[i];
 
-        var original_words_array = original_words.textContent.split(/([\W])/);
-        //console.log(original_words_array)
+        var original_words_array = original_words.textContent.split(/([^\w'])/);
+
         translate(original_words_array, all[i]);
     };
 }
