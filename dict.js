@@ -1770,9 +1770,6 @@ function translate(words, element) {
 
         var sanatised_word = words[i].replace(/\W/g, '')
 
-       	console.log(sanatised_word);
-				console.log(words[i]);
-
         var caps_start = false;
         var all_caps = false;
 
