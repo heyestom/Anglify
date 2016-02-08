@@ -15,10 +15,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 chrome.tabs.onActivated.addListener(function(activeInfo) {
     // how to fetch tab url using activeInfo.tabid
     chrome.tabs.get(activeInfo.tabId, function(tab) {
-        //alert("Sam");
         var tmp = tab_count_dict[activeInfo.tabId];
-        //alert(tmp);
-        //alert(activeInfo.tabId);
         if (tmp != undefined) {
             chrome.browserAction.setBadgeText({
                 text: tmp

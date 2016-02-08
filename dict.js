@@ -1,4 +1,4 @@
-var dict = {}
+var dict = {};
 dict["accessorize"] = "accessorise";
 dict["accessorized"] = "accessorised";
 dict["accessorizes"] = "accessorises";
@@ -103,6 +103,7 @@ dict["authorize"] = "authorise";
 dict["authorized"] = "authorised";
 dict["authorizes"] = "authorises";
 dict["authorizing"] = "authorising";
+dict["authorization"] = "authorisation";
 dict["ax"] = "axe";
 dict["backpedaled"] = "backpedalled";
 dict["backpedaling"] = "backpedalling";
@@ -1842,7 +1843,7 @@ chrome.extension.sendMessage({
 chrome.runtime.onMessage.addListener(function(msg, sender, response) {
     /* First, validate the message's structure */
     if (msg.from && (msg.from === "popup") && msg.subject && (msg.subject === "DOMInfo")) {
-        /* Collect the necessary data 
+        /* Collect the necessary data
          * (For your specific requirements `document.querySelectorAll(...)`
          *  should be equivalent to jquery's `$(...)`)*/
         var domInfo = {
@@ -1850,7 +1851,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response) {
             bad_words: bad_words,
             good_words: good_words
         };
-        /* Directly respond to the sender (popup), 
+        /* Directly respond to the sender (popup),
          * through the specified callback */
         response(domInfo);
     } else {

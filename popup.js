@@ -2,14 +2,9 @@
 function setDOMInfo(info) {
     document.getElementById("count").textContent = info.count;
 
-    // console.log(info.bad_words);
-    // console.log(info.good_words);
-
     var bad_array = info.bad_words.split("\n");
     var good_array = info.good_words.split("\n");
 
-    // console.log(bad_array);
-    // console.log(good_array);
     var word_count = {};
     var good_word_count = {};
 
@@ -67,7 +62,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 from: "popup",
                 subject: "DOMInfo"
             },
-            /* ...also specifying a callback to be called 
+            /* ...also specifying a callback to be called
              *    from the receiving end (content script) */
             setDOMInfo);
     });

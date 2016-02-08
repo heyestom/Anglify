@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Anglify",
     "description": "A US 'English' to actual English converter.",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "icons": {
         "128": "icon.png"
     },
@@ -18,6 +18,5 @@
         "matches": ["<all_urls>"],
         "js": ["jquery-2.1.0.js", "dict.js"],
         "run_at": "document_end"
-
     }]
 }
