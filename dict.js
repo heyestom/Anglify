@@ -1758,6 +1758,7 @@ dict["trash"] = "rubbish";
 dict["lawyer"] = "solictor";
 dict["billfold"] = "wallet";
 dict["yall"] = "you all";
+dict["wrench"] = "spanner";
 
 function capitaliseFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
